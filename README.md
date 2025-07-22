@@ -76,8 +76,6 @@ dotnet run
  
  you can log in as an admin using this account: halim.yamin@Nova.com; password: 1234567
  
- CORS and cookie settings are configured for production with SameSite=Strict.
-
 ---
 
  ## Contributions
