@@ -1,0 +1,83 @@
+
+@import 'tailwindcss';
+@theme {
+  --background-color-lightgray: #f3f4f6;
+  --background-color-lightgrayy:  #A5F3FC;
+  --background-color-warmteal: #99F6E4;
+  --background-color-meduimteal: #99F6E4;
+  --color-darkteal:#0D9488;
+}
+
+.bg-deepblue{
+background-color:var(--deepblue-500);
+}
+
+
+@utility container2 {
+  background-color:red;
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+ column-gap:30px;
+}
+
+body{
+
+  overflow-x:hidden;
+  background-color: rgb(240, 240, 240);
+
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+#root{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  
+  
+}
+
+
+.perspective {
+  perspective: 1000px;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+
+
+
+
+
+/* Scrollbar customization */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #c3cbd6; /* light mode: slate-300 */
+  border-radius: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover{
+  background-color:#b1b9c4;
+}
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #647286; /* dark mode: gray-600 */
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #7888a0; /* dark mode: gray-600 */
+}

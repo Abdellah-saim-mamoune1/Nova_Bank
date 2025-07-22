@@ -1,0 +1,1428 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "bankApI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Authorization/login": {
+      "post": {
+        "tags": [
+          "Authorization"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DLogin"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Authorization/RefreshTokens": {
+      "put": {
+        "tags": [
+          "Authorization"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/RefeshTokenDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Client/UpdateClient": {
+      "put": {
+        "tags": [
+          "Client"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DUpdateClient"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Client/AddClientNotification": {
+      "post": {
+        "tags": [
+          "Client"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DCNotifications"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Client/AddGetHelpRequist": {
+      "post": {
+        "tags": [
+          "Client"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DCNotifications"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Client/GetClientInfo": {
+      "get": {
+        "tags": [
+          "Client"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/DPersonClientG"
+            }
+          }
+        }
+      }
+    },
+    "/api/CNotifications/GetClientNotifications/{AccountId}": {
+      "get": {
+        "tags": [
+          "CNotifications"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccountId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DCNotificationsGet"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CNotifications/UpdateIsNotificationviewed/{Notificationid}": {
+      "put": {
+        "tags": [
+          "CNotifications"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Notificationid",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Employee/AddNewEmployee": {
+      "post": {
+        "tags": [
+          "Employee"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DEmployeePerson"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/DGetEmployee"
+            }
+          }
+        }
+      }
+    },
+    "/api/Employee/GetCardsInfo": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/DGetCardsInfo"
+            }
+          }
+        }
+      }
+    },
+    "/api/Employee/EGetAllTransactions": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/DGetResentTransactions"
+            }
+          }
+        }
+      }
+    },
+    "/api/Employee/GetEmployeeInfo": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/DGetEmployeeInfos"
+            }
+          }
+        }
+      }
+    },
+    "/api/Employee/GetAllEmployeesInfos": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DGetEmployeeInfos"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Employee/UpdateEmployee": {
+      "put": {
+        "tags": [
+          "Employee"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DUpdateEmployee"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Employee/FreezeUnfreezeEmployeeAccount": {
+      "put": {
+        "tags": [
+          "Employee"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DSetEmailState"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Employee/SendMessageToEmployee": {
+      "post": {
+        "tags": [
+          "Employee"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DENotifications"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ENotifications/GetEmployeeNotifications/{AccountId}": {
+      "get": {
+        "tags": [
+          "ENotifications"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccountId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DCNotificationsGet"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ENotifications/UpdateIsEmployeeNotificationviewed": {
+      "put": {
+        "tags": [
+          "ENotifications"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DSetIsNotificationV"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ManageClients/AddNewClient": {
+      "post": {
+        "tags": [
+          "ManageClients"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DPersonClientS"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ManageClients/GetAllClients": {
+      "get": {
+        "tags": [
+          "ManageClients"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DPersonClientG"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ManageClients/GetClientById{id}": {
+      "get": {
+        "tags": [
+          "ManageClients"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/DPersonClientG"
+            }
+          }
+        }
+      }
+    },
+    "/api/ManageClients/GetAllClientsAccounts": {
+      "get": {
+        "tags": [
+          "ManageClients"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DGetEmails"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ManageClients/AddAccount": {
+      "post": {
+        "tags": [
+          "ManageClients"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DBankEmail"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/DAccountGet"
+            }
+          }
+        }
+      }
+    },
+    "/api/ManageClients/AddClientNotification": {
+      "post": {
+        "tags": [
+          "ManageClients"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DCNotifications"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ManageClients/FreezeUnfreezeClientAccount": {
+      "put": {
+        "tags": [
+          "ManageClients"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DSetEmailState"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ManageClients/Deposit": {
+      "post": {
+        "tags": [
+          "ManageClients"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DDepositWithdraw"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ManageClients/Withdraw": {
+      "post": {
+        "tags": [
+          "ManageClients"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DDepositWithdraw"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TransactionsHistory/GetTransactionHistoryById{AccountId}": {
+      "get": {
+        "tags": [
+          "TransactionsHistory"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AccountId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DGetTransactionsHistory"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TransactionsHistory/TransferFund": {
+      "put": {
+        "tags": [
+          "TransactionsHistory"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/DSetTransferFund"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "DAccount": {
+      "type": "object",
+      "properties": {
+        "passWord": {
+          "type": "string"
+        },
+        "balance": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DAccountGet": {
+      "type": "object",
+      "properties": {
+        "accountId": {
+          "type": "string"
+        },
+        "balance": {
+          "format": "double",
+          "type": "number"
+        },
+        "isFrozen": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "format": "date",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DBankEmail": {
+      "type": "object",
+      "properties": {
+        "currentAccount": {
+          "type": "string"
+        },
+        "passWord": {
+          "type": "string"
+        },
+        "initialBalance": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DCNotifications": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        },
+        "type": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "accountId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DCNotificationsGet": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "notification": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "date": {
+          "format": "date",
+          "type": "string"
+        },
+        "isviewed": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DCardGet": {
+      "type": "object",
+      "properties": {
+        "cardNumber": {
+          "type": "string"
+        },
+        "expirationDate": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DDepositWithdraw": {
+      "type": "object",
+      "properties": {
+        "clientAccount": {
+          "type": "string"
+        },
+        "employeeAccount": {
+          "type": "string"
+        },
+        "amount": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DEAccount": {
+      "type": "object",
+      "properties": {
+        "accountId": {
+          "type": "string"
+        },
+        "salary": {
+          "format": "double",
+          "type": "number"
+        },
+        "isFrozen": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "format": "date",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DENotifications": {
+      "type": "object",
+      "properties": {
+        "senderAccount": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        },
+        "type": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "accountId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DEmployee": {
+      "type": "object",
+      "properties": {
+        "salary": {
+          "format": "double",
+          "type": "number"
+        },
+        "typeId": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DEmployeeAccount": {
+      "type": "object",
+      "properties": {
+        "account": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DEmployeePerson": {
+      "type": "object",
+      "properties": {
+        "person": {
+          "$ref": "#/definitions/DPerson"
+        },
+        "employee": {
+          "$ref": "#/definitions/DEmployee"
+        },
+        "employeeAccount": {
+          "$ref": "#/definitions/DEmployeeAccount"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DGetAllClientsTransactionsHistory": {
+      "type": "object",
+      "properties": {
+        "accountId": {
+          "type": "string"
+        },
+        "clientFullName": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "transactionDate": {
+          "format": "date",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DGetCardsInfo": {
+      "type": "object",
+      "properties": {
+        "totalClients": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "totalStaff": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "newClients": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "totalWithdrawls": {
+          "format": "double",
+          "type": "number"
+        },
+        "totalDeposits": {
+          "format": "double",
+          "type": "number"
+        },
+        "totalTransfers": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DGetEmails": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "balance": {
+          "format": "double",
+          "type": "number"
+        },
+        "isFrozen": {
+          "type": "boolean"
+        },
+        "personId": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DGetEmployee": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "personalEmail": {
+          "type": "string"
+        },
+        "birthDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "roleType": {
+          "type": "string"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "salary": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DGetEmployeeInfos": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "birthDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "personalEmail": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "roleType": {
+          "type": "string"
+        },
+        "accountInfo": {
+          "$ref": "#/definitions/DEAccount"
+        },
+        "isActive": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DGetResentTransactions": {
+      "type": "object",
+      "properties": {
+        "transactionsHistory": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DGetAllClientsTransactionsHistory"
+          }
+        },
+        "transferFundHistory": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DGetTransferFundHistory"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "DGetTransactionsHistory": {
+      "type": "object",
+      "properties": {
+        "n": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "type": {
+          "type": "string"
+        },
+        "amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "date": {
+          "format": "date",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DGetTransferFundHistory": {
+      "type": "object",
+      "properties": {
+        "senderAccount": {
+          "type": "string"
+        },
+        "recieverAccount": {
+          "type": "string"
+        },
+        "amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "date": {
+          "format": "date",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DLogin": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DPerson": {
+      "required": [
+        "address",
+        "birthDate",
+        "email",
+        "firstName",
+        "lastName",
+        "phoneNumber"
+      ],
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "maxLength": 100,
+          "minLength": 1,
+          "type": "string"
+        },
+        "lastName": {
+          "maxLength": 100,
+          "minLength": 1,
+          "type": "string"
+        },
+        "birthDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "email": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "address": {
+          "maxLength": 100,
+          "minLength": 1,
+          "type": "string"
+        },
+        "phoneNumber": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DPersonClientG": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "birthDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "accountInfo": {
+          "$ref": "#/definitions/DAccountGet"
+        },
+        "cardInfo": {
+          "$ref": "#/definitions/DCardGet"
+        },
+        "personalEmail": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "roleType": {
+          "type": "string"
+        },
+        "bankEmails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DAccountGet"
+          }
+        },
+        "cards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DCardGet"
+          }
+        },
+        "isActive": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DPersonClientS": {
+      "type": "object",
+      "properties": {
+        "person": {
+          "$ref": "#/definitions/DPerson"
+        },
+        "account": {
+          "$ref": "#/definitions/DAccount"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DSetEmailState": {
+      "type": "object",
+      "properties": {
+        "accountId": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DSetIsNotificationV": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "account": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DSetTransferFund": {
+      "type": "object",
+      "properties": {
+        "senderAccountId": {
+          "type": "string"
+        },
+        "recieverAccountId": {
+          "type": "string"
+        },
+        "amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DUpdateClient": {
+      "type": "object",
+      "properties": {
+        "accountId": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "birthDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DUpdateEmployee": {
+      "type": "object",
+      "properties": {
+        "accountId": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "birthDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "RefeshTokenDto": {
+      "type": "object",
+      "properties": {
+        "account": {
+          "type": "string"
+        },
+        "refreshToken": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
