@@ -15,7 +15,7 @@
 
 ## Live Demo
 
-- **Frontend:** [https://nova-bank-orcin.vercel.app/](https://nova-bank-orcin.vercel.app/)
+- **Frontend:** [https://nova-origin.vercel.app/](https://nova-origin.vercel.app/)
 - **Backend:** [https://novaapp1-ctdvfydcdfb8ctcq.spaincentral-01.azurewebsites.net/](https://novaapp1-ctdvfydcdfb8ctcq.spaincentral-01.azurewebsites.net/)
 
 ---
