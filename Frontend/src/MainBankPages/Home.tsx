@@ -18,9 +18,7 @@ export function Home() {
           <Link to="/login">
             <button className="px-6 py-3 text-lg rounded-xl shadow-md">Login</button>
           </Link>
-          <Link to="/contact">
-            <button  className="px-6 py-3 text-lg rounded-xl">Contact Us</button>
-          </Link>
+          
         </div>
       </motion.div>
 
