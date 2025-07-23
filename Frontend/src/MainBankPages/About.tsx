@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 export function About() {
-  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-white text-gray-800 px-6 py-10">
       <motion.div
