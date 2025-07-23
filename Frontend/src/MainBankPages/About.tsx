@@ -53,9 +53,7 @@ export function About() {
           transition={{ delay: 0.3, duration: 0.5 }}
           className="text-center mt-10"
         >
-          <p  onClick={()=>navigate("/contact")} className="text-md text-gray-600">
-            Want to get in touch? <span className="text-blue-600 underline cursor-pointer">Contact us</span> for more information.
-          </p>
+          
         </motion.div>
       </motion.div>
     </div>
