@@ -24,11 +24,7 @@ export function NavBar() {
               About Us
             </Link>
           </li>
-          <li>
-            <Link to="/contact" className="transition hover:scale-105 hover:text-cyan-100 duration-200">
-              Contact
-            </Link>
-          </li>
+         
           <li>
             <Link
               to="/login"
