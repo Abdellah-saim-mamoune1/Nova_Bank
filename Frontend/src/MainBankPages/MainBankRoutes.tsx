@@ -2,7 +2,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { About } from "./About";
 import { Home } from "./Home";
-import { Contact } from "./Contact";
+
 import { NavBar } from './NavBar';
 import { LoginPage } from './LoginForm';
 import { Navigate } from 'react-router-dom';
@@ -15,7 +15,7 @@ export  function MainBankRoutes() {
              <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
+               
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="*" element={<Navigate to="/" />} /> {/* fallback to Home */}
               </Routes>
